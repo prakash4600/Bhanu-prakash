@@ -1,0 +1,10 @@
+  name: MyFirstYAMLJob
+  vm-template: Basic Build VM Template
+  git:
+  - url: "https://mydevcsinstance-mydomain/.../scm/employee.git"
+  steps:
+  - shell:
+      script: "echo Build Number: $BUILD_NUMBER"
+  - maven:
+      goals: clean install
+      pom-file: "employees-app/pom.xml"
